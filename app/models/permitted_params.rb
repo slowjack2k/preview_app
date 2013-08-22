@@ -8,4 +8,9 @@ class PermittedParams < Struct.new(:params)
     permitted = [:login, :password]
     params.require(:session).permit(*permitted)
   end
+
+  def gadget
+    permitted = [:name]
+    params.require(:gadget).permit(*permitted)
+  end
 end

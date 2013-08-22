@@ -14,7 +14,13 @@ describe PermittedParams do
               :login => "test_login",
               :password => "1235678",
               :error => true
-          }
+          },
+
+          :gadget => {
+              :name => "gadget name"
+          },
+
+          :user_id => 1
       }
     )
   }
@@ -40,6 +46,16 @@ describe PermittedParams do
 
     it "should not return forbidden parameter" do
       subject.session.should_not include :error
+    end
+  end
+
+  describe ".gadget" do
+    it "should allowed attributes" do
+      subject.gadget.should include :name
+    end
+
+    it "should not return forbidden parameter" do
+      subject.gadget.should_not include :error
     end
   end
 end
