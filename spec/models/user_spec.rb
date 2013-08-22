@@ -6,7 +6,7 @@ describe User do
     t.macro.should == :has_many
   end
 
-  [:login].each do |attribute|
+  [:login, :password].each do |attribute|
      it "should have attribute #{attribute}" do
        user = User.new
        user.should respond_to attribute
