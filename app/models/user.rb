@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :login, uniqueness: true
 
   def authenticate(password)
-    true
+    self.password == password #ToDo encrypt password
   end
 
 end

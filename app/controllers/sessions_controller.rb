@@ -5,10 +5,12 @@ class SessionsController < ApplicationController
 
   def create
 
-    user = User.find(:first, :conditions => {login: permitted_params.user[:login]})
+    user = User.find(:first, :conditions => {login: permitted_params.session[:login]})
 
-    if user
+    if user && user.authenticate(permitted_params.session[:password])
+      @message = "You have been successfully signin"
     else
+      @message = "You have not been successfully signin"
     end
   end
 

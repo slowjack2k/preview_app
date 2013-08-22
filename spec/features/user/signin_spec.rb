@@ -14,6 +14,7 @@ feature  "user signin", %q{
     visit signin_url
 
     fill_in "session_login", with: "my login"
+    fill_in "session_password", with: "pw1"
     click_button "Signin"
 
     expect(page).to have_text("You have been successfully signin")
