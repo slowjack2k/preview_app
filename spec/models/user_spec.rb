@@ -13,4 +13,13 @@ describe User do
      end
   end
 
+  describe ".authenticate" do
+    subject {
+      Fabricate(:user, login: "my login", password: "pw1")
+    }
+    it "should return true when the password is correct" do
+      subject.authenticate.should be_true
+    end
+  end
+
 end

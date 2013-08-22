@@ -5,9 +5,11 @@ class SessionsController < ApplicationController
 
   def create
 
-    user = User.find(:first, :conditions => {login: params[:session][:login]})
+    user = User.find(:first, :conditions => {login: permitted_params.user[:login]})
 
-
+    if user
+    else
+    end
   end
 
   def destroy
