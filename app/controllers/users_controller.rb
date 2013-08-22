@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       @message = "Account was successfully created."
     else
-      @message = "Failure in sign up"
+      @message = @user.errors.full_messages.join("\n")
     end
   end
 end

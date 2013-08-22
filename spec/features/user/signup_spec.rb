@@ -22,7 +22,7 @@ feature  "user signup", %q{
     fill_in "user_login", with: "my login"
     click_button "Create User"
 
-    expect(page).to have_text("Account was successfully created.")
+    expect(page).to have_text("Login has already been taken")
   end
 
 end
