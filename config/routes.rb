@@ -1,7 +1,8 @@
 PreviewApp::Application.routes.draw do
-  resources :gadgets
 
-  resources :users
+  resources :users do
+    resources :gadgets
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
 
