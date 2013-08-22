@@ -9,6 +9,9 @@ feature  "user signup", %q{
   scenario "creating a new user" do
     visit new_user_url
 
+    fill_in "user_login", with: "my login"
+    click_button "Create User"
+
     expect(page).to have_text("Account was successfully created.")
   end
 
