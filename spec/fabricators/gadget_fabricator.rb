@@ -1,0 +1,2 @@
+Fabricator(:gadget) do
+end
